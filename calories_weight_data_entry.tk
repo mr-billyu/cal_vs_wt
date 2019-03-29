@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+
+import argparse
+import datetime
+from myTk import myTk
+
+def ok_callback():
+    r = gui.getentry('red')
+    y = gui.getentry('yel')
+    g = gui.getentry('green')
+    w = gui.getentry('wt')
+    d = datetime.datetime.now().strftime('%Y%m%d%H%M')
+    try:
+        int(r)
+    except:
+        r = '0'
+    try:
+        int(y)
+    except:
+        y = '0'
+    try:
+        int(g)
+    except:
+        g = '0'
+    t = int(r) + int(y) + int(g)
+    
+    f = open(file, 'a+')
+    f.write(d + ',' + r + ',' + y + ',' + g + ',' + str(t) + ',' + w + '\r\n')
+    f.close()
+    gui.quit()
+
+def main():
+    global gui
+    global file
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('fle')
+    args = parser.parse_args()
+    file = args.fle
+
+    gui = myTk()
+    Win = gui.win('Calorie Weight Data Entry', '100x240')
+
+    gui.frame('fill')
+    gui.label('l', ' ')
+    gui.frame('fill')
+    gui.label('l', 'Calories')
+    gui.frame('fill')
+    gui.textentry('red', 'Red    ', 5)
+    gui.focusentry('red')
+    gui.frame('fill')
+    gui.textentry('yel', 'Yellow ', 5)
+    gui.frame('fill')
+    gui.textentry('green', 'Green ', 5)
+    gui.frame('fill')
+    gui.label('l', ' ')
+    gui.frame('fill')
+    gui.label('l', 'Weight')
+    gui.frame('fill')
+    gui.textentry('wt', 'Weight', 5)
+    gui.frame('fill')
+    gui.button('Ok', 'LightSteelBlue', ok_callback)
+    gui.button('Quit', 'LightSteelBlue', gui.quit)
+    gui.mainloop()
+ 
+if __name__ == '__main__':
+	main()
