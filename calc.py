@@ -63,11 +63,11 @@ wt_slope = wt_num / com_den
 print("Current: " + date)
 print(" ")
 print("       Current       Mean    Slope")
-print("Red:   {2:+7.0f}    {0:+7.0f}   {1:+7.1f}".format(mean_red, red_slope, int(red)))
-print("Yel:   {2:+7.0f}    {0:+7.0f}   {1:+7.1f}".format(mean_yel, yel_slope, int(yel)))
-print("Grn:   {2:+7.0f}    {0:+7.0f}   {1:+7.1f}".format(mean_grn, grn_slope, int(grn)))
-print("Ttl:   {2:+7.0f}    {0:+7.0f}   {1:+7.1f}".format(mean_ttl, ttl_slope, int(ttl)))
-print("Weight:  {2:+7.1f}    {0:+7.1f}  {1:+7.2f}".format(mean_wt, wt_slope,
+print("Red:   {2:7.0f}    {0:7.0f}   {1:+7.1f}".format(mean_red, red_slope, int(red)))
+print("Yel:   {2:7.0f}    {0:7.0f}   {1:+7.1f}".format(mean_yel, yel_slope, int(yel)))
+print("Grn:   {2:7.0f}    {0:7.0f}   {1:+7.1f}".format(mean_grn, grn_slope, int(grn)))
+print("Ttl:   {2:7.0f}    {0:7.0f}   {1:+7.1f}".format(mean_ttl, ttl_slope, int(ttl)))
+print("Weight:  {2:7.1f}    {0:7.1f}  {1:+7.2f}".format(mean_wt, wt_slope,
 float(wt)))
 print(" ")
 print("Press Enter to Quit.")
