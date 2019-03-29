@@ -58,12 +58,17 @@ grn_slope = grn_num / com_den
 ttl_slope = ttl_num /com_den
 wt_slope = wt_num / com_den
 
-print(d[nbr_of_lns -1])
+(date, red, yel, grn, ttl, wt) = d[nbr_of_lns - 1]
 
-print("           Mean    Slope")
-print("Red:    {0:+7.0f}   {1:+5.1f}".format(mean_red, red_slope))
-print("Yel:    {0:+7.0f}   {1:+5.1f}".format(mean_yel, yel_slope))
-print("Grn:    {0:+7.0f}   {1:+5.1f}".format(mean_grn, grn_slope))
-print("Ttl:    {0:+7.0f}   {1:+5.1f}".format(mean_ttl, ttl_slope))
-print("Weight:   {0:+7.1f}  {1:+5.2f}".format(mean_wt, wt_slope))
+print("Current: " + date)
+print(" ")
+print("       Current       Mean    Slope")
+print("Red:   {2:+7.0f}    {0:+7.0f}   {1:+7.1f}".format(mean_red, red_slope, int(red)))
+print("Yel:   {2:+7.0f}    {0:+7.0f}   {1:+7.1f}".format(mean_yel, yel_slope, int(yel)))
+print("Grn:   {2:+7.0f}    {0:+7.0f}   {1:+7.1f}".format(mean_grn, grn_slope, int(grn)))
+print("Ttl:   {2:+7.0f}    {0:+7.0f}   {1:+7.1f}".format(mean_ttl, ttl_slope, int(ttl)))
+print("Weight:  {2:+7.1f}    {0:+7.1f}  {1:+7.2f}".format(mean_wt, wt_slope,
+float(wt)))
+print(" ")
+print("Press Enter to Quit.")
 input()
